@@ -1,0 +1,20 @@
+﻿@using DBProject.Models;
+@model List<DBProject.Models.Customer>
+
+<div class="text-center">
+    <h2 class="display-4">Current Customers</h2>
+    <div style="border-width:5px; border-color:red; border-style:solid; width:300px; font-size:2em;">Hello
+       @foreach(var c in Model)
+       {
+           <div class="card col-lg-6 mb-4">
+            <div class="card text-center bg-danger text-black" style="width:18rem;">
+               <div class="card-body">
+                   <div class="card-title text-white">@c.LastName, @c.FirstName </div>
+                    <div class="card-subtitle text-white">@c.City @c.Country</div>
+                    <div class="card-text text-white">@c.Phone</div>
+               </div>
+           </div>
+           </div>
+       }
+    </div>
+ </div>     

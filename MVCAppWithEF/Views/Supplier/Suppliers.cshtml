@@ -1,0 +1,14 @@
+﻿@using DBProject.Models;
+@model List<DBProject.Models.Supplier>
+
+<div class="text-center">
+    <h2 class="display-4">Suppliers</h2>
+ 
+       @foreach(var c in Model)
+       {
+        <div>
+           @c.CompanyName @c.Country
+        </div>
+       }
+    
+</div>

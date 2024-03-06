@@ -1,0 +1,17 @@
+﻿@using DBProject.Models;
+@model Customer
+
+<div class="text-center">
+    <div class="display-6">Customer Details for @Model.LastName, @Model.FirstName</div>
+    <div class="card align-items-center">
+      
+            <div class="card col-lg-5 m-1">
+                <div class="card border-dark bg-white h4">
+                    @Model.LastName, @Model.FirstName<br />
+                    @Model.City @Model.Country @Model.Phone
+                <a class="btn btn-outline-primary btn-sm " asp-action="Edit" asp-route-id="@Model.Id" asp-controller="Cust">EDIT</a>
+                </div>
+            </div>
+  
+    </div>
+</div>

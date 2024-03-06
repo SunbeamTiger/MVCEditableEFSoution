@@ -1,0 +1,17 @@
+﻿@using DBProject.Models;
+@model List<DBProject.Models.Product>
+
+<div class="text-center">
+    <h2 class="display-4">Products</h2>
+
+    @if(Model.Count==0)
+    {
+        <h4> None available</h4>
+     }
+
+    @foreach (Product p in Model )
+    {
+        <h4> @p.Id @p.ProductName @p.UnitPrice  </h4>
+    }
+
+</div>

@@ -1,0 +1,17 @@
+﻿@using DBProject.Models;
+@model List<Customer>
+
+    <div class="text-center">
+        <h2 class="display-4">Current Customers</h2>
+        <div class="card align-items-center">
+            @foreach(var c in Model)
+            {
+                <div class="card col-lg-3 m-1">
+                <div class="card border-dark bg-white h4 align-items-center">
+                        @c.LastName, @c.FirstName<br />
+                    <a class="btn btn-primary btn-sm col-6 m-3" asp-action="Details" asp-route-id="@c.Id" asp-controller="Cust">Details</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
