@@ -1,0 +1,31 @@
+﻿@using DBProject.Models
+@model Customer
+<form asp-action="Create" asp-controller="Cust" method="post">
+
+    <div class="form-group border border-dark border-3">
+        <div class="row-cols-1 m-3">
+            <label for="Firstname">First Name</label>
+            <input type="text" asp-for="FirstName" class="form-control" id="Firstname" />
+        </div>
+        <div class="row-cols-1 m-3">
+            <label for="Lastname">Last Name</label>
+            <input type="text" asp-for="LastName" class="form-control" id="LastName" />
+        </div>
+        <div class="row-cols-1 m-3">
+            <label for="City">City</label>
+            <input type="text" asp-for="City" class="form-control" id="City" />
+        </div>
+        <div class="row-cols-1 m-3">
+            <label for="Country">Country</label>
+            <input type="text" asp-for="Country" class="form-control" id="Country" />
+        </div>
+        <div class="row-cols-1 m-3">
+            <label for="Phone">Phone</label>
+            <input type="text" asp-for="Phone" class="form-control" id="Phone" />
+        </div>
+        <div class="align-items-center align-content-lg-center">
+            <button class="btn-primary btn-sm col-2 m-3" type="submit">CREATE</button>
+        </div>
+    </div>
+
+</form>

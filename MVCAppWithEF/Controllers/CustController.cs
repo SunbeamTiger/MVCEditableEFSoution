@@ -29,23 +29,17 @@ namespace MVCAppWithEF.Controllers
 
         // GET: CustController/Create
         public ActionResult Create()
-        {
-            return View();
+        {   Customer c = new Customer();    
+            return View(c);
         }
 
         // POST: CustController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Customer c)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            _Repo.Add(c);
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: HomeController1/Edit/5
@@ -86,9 +80,11 @@ namespace MVCAppWithEF.Controllers
         }
 
         // GET: HomeController1/Delete/5
+        [HttpGet]
         public ActionResult Delete(int id)
         {
-            return View();
+            _Repo.Delete(id);
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: HomeController1/Delete/5
@@ -96,20 +92,17 @@ namespace MVCAppWithEF.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
+            _Repo.Delete(id);   
+            return RedirectToAction(nameof(Index));
+         }
         public ActionResult CustomersOrders()
         {
-            List<CustomerOrder> co = _Repo.GetCustomersOrders(); 
-            return View(co);    
+            List<CustomerOrder> co = _Repo.GetCustomersOrders();
+            return View(co);
         }
+
     }
+
+
+       
 }

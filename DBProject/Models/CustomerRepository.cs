@@ -57,5 +57,20 @@ namespace DBProject.Models
             return query.ToList();
 
         }
+
+        public Customer Add(Customer customer)
+        {
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
+            return customer;    
+        }
+
+        public bool Delete(int ID)
+        {
+            Customer c = GetCustomerById(ID);
+            _context.Customers.Remove(c);
+            _context.SaveChanges();
+            return true;    
+        }
     }
 }
